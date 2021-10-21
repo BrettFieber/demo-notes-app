@@ -18,6 +18,7 @@
     "@serverless-stack/cli": "0.43.6",
     "@serverless-stack/resources": "0.43.6",
     "aws-sdk": "^2.995.0",
+    "stripe": "^8.178.0",
     "uuid": "^8.3.2"
   }
 }
