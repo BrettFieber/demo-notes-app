@@ -6,7 +6,6 @@ import App from './App';
 import { Amplify } from 'aws-amplify'
 import config from './config'
 import reportWebVitals from './reportWebVitals';
-import { CognitoHostedUIIdentityProvider } from '@aws-amplify/auth';
 
 Amplify.configure({
   Auth: {
