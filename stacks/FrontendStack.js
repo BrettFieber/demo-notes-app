@@ -9,7 +9,13 @@ export default class FrontendStack extends sst.Stack {
     // Define our React app
     const site = new sst.ReactStaticSite(this, "ReactSite", {
       path: "frontend",
-      customDomain: scope.stage === "prod" ? "demo.serverless-stack.com" : undefined,
+      customDomain: 
+        scope.stage === 'prod' 
+        ? {
+            domainName: 'serverless-dojo.com',
+            domainAlias: 'www.serverless-dojo.com'
+          }
+        : undefined,
       // Pass in our environment variables
       environment: {
         REACT_APP_API_URL: api.customDomainUrl || api.url,
