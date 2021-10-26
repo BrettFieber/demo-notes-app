@@ -8,6 +8,7 @@ import Routes from './Routes'
 import { AppContext } from './lib/contextLib'
 import { onError } from './lib/errorLib'
 import { useHistory } from 'react-router-dom';
+import ErrorBoundry from './components/ErrorBoundry';
 
 function App() {
   const history = useHistory()
@@ -71,9 +72,11 @@ function App() {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-        <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
-          <Routes />
-        </AppContext.Provider>
+        <ErrorBoundry>
+          <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
+            <Routes />
+          </AppContext.Provider>
+        </ErrorBoundry>
       </div>
     )
   );
